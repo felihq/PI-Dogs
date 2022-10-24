@@ -4,9 +4,9 @@ const { Router } = require('express');
 
 
 const router = Router();
-
+const getDogs = require('./getDogs')
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
-
+router.use('/', getDogs);
 
 module.exports = router;
