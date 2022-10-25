@@ -6,10 +6,12 @@ const { Router } = require('express');
 const router = Router();
 const getDogs = require('./getDogs')
 const getDogById = require('./getDogById')
+const temperamentsRoute = require('./temperamentsRoute')
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
 router.use('/', getDogs);
 router.use('/', getDogById);
+router.use('/', temperamentsRoute);
 
 
 module.exports = router;
