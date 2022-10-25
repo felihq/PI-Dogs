@@ -53,5 +53,5 @@ const allInfo = async () => {
 
 
 module.exports = {
-   allInfo, getApiInfo, dogsDBinfo 
+   allInfo, getApiInfo, dogsDBinfo, 
 };
