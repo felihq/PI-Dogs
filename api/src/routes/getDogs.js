@@ -1,20 +1,20 @@
-const axios = require("axios");
+
 const { Router } = require("express");
 const router = Router();
 const { allInfo } = require("./controllers/DogsInfo");
-const { Dog, Temperament } = require("../db");
 
-router.get('/', async (req, res) => {
+router.get('/dogs', async (req, res) => {
   const name = req.query.name;
-  const dogsName = await allInfo();
     try{
-  if(name){
-      const dog = dogsName.filter((e) => {
-        e.name.toLowerCase().includes(name.toLowerCase())
-      })
-      dog.length? res.status(200).send(dog) : res.status(404).send('Dog not found')
+        if(!name){
+      const dogsName = await allInfo();
+      res.status(200).send(dogsName)
   } else {
-    res.status(200).send(dogsName)
+    const dogsName2 = await allInfo();
+       const dog = dogsName2.filter((e) => {
+         e.name.toLowerCase().includes(name.toLowerCase())
+       })
+    dog.length? res.status(200).send(dog) : res.status(404).send('Dog not found')
   }
 } catch(error) { 
     console.log(error)

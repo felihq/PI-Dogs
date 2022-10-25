@@ -1,11 +1,11 @@
 const {Router} = require('express');
 const axios = require('axios');
-const { Dog, Temperament} = require('../../db');
+const { Dogs, Temperament} = require('../../db');
 const API = 'https://api.thedogapi.com/v1/breeds'
 
 const dogsDBinfo = async ()=>{
 
-   let dogsDB1 = await Dog.findAll({
+   let dogsDB1 = await Dogs.findAll({
        include: Temperament        
        });       
 

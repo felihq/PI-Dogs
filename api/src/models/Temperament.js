@@ -10,6 +10,7 @@ module.exports = (sequelize) => {
     },
     name: {
       type: DataTypes.STRING,
+      defaultValue: 'There is no name'
     }
   });
 };
