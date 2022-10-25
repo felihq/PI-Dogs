@@ -1,6 +1,5 @@
 const { Router } = require('express');
 const router = Router();
-// const { getApiInfo } = require('./controllers/DogsInfo')
 const axios = require('axios')
 const api = 'https://api.thedogapi.com/v1/breeds'
 
@@ -24,5 +23,3 @@ router.get('/temperaments', async (req, res) => {
 })
 
 module.exports = router;
-//  const filteredDogs = dogs.filter((e) => e.temperament)
-//  filteredDogs? res.status(200).send(filteredDogs) : res.status(404).send("No temperaments found")
