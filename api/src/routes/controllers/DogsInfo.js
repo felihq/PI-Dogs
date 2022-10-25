@@ -42,7 +42,6 @@ const getApiInfo = async () => {
       }
   })
   return allDogs;
-
 }
 
 const allInfo = async () => {
@@ -51,6 +50,7 @@ const allInfo = async () => {
    const infoTotal = [...dbInfo, ...apiInfo]
    return infoTotal;
 }
+
 
 module.exports = {
    allInfo, getApiInfo, dogsDBinfo 

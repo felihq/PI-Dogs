@@ -9,7 +9,7 @@ const getDogById = require('./getDogById')
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
 router.use('/', getDogs);
-
 router.use('/', getDogById);
+
 
 module.exports = router;
