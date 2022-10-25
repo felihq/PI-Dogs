@@ -23,29 +23,9 @@ router.get('/dogs', async (req, res) => {
         let allDogs = await allInfo();
         res.status(200).json(allDogs);
       } catch (error) {
-        throw new Error(error);
+        res.status(404).send('Missing data')
       }
     }
 })
-  //-------SI ENTRO POR QUERY----------
-//   if (req.query.name) {
-//     try {
-
-//       let {name} = req.query
-//       console.log(name)
-//       const dogs =  await allInfo()
-//       const result = dogs.filter(el=> el.name.toLowerCase().includes(name.toLowerCase()))
-
-//       if(result.length >= 1){
-//       res.status(200).json(result)}
-//       else{
-//         throw new Error(error)
-//       }
-//     } catch (error) {
-//       res.status(400).json(error);
-//     }
-//   } 
-
-
 
 module.exports = router;
