@@ -1,0 +1,62 @@
+.dogsContainer{
+    margin: 15px;
+}
+
+.dogsCard{
+    border-radius: 15px 15px 15px 15px;
+    background: rgba(98, 97, 97, 0.25);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-bottom: 4px solid rgb(98, 97, 97);
+    height: 403px;
+    width: 220px;
+    margin-left: 18%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    flex-direction: column;
+    transition: all 0.4s ease
+}
+
+.dogsImage{
+    border-radius: 10px 10px 10px 10px ;
+margin-top: -3px;
+width: 80%;
+max-width: 100%;
+height: auto;
+position: relative;
+object-fit: fill; 
+align-items: center;
+justify-content: center;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 10px 10px 10px 10px;
+    margin-left: 20px;
+    
+}
+
+.cardTemperaments{
+    color: #53273d;
+background-color: rgb(161, 158, 158);
+font-size: 13px;
+text-align: center;
+word-wrap: break-word;
+}
+
+.cardWeight{
+    color: #333036;
+    background-color: rgb(161, 158, 158);
+    font-size: 13px;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.infoButton{
+    text-align: center;
+}

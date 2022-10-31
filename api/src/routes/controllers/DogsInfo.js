@@ -34,13 +34,16 @@ const getApiInfo = async () => {
       return{
       id: e.id,
       name: e.name,
-      height: e.height.metric,
-      weight: e.weight.metric,
+      min_weight: Number(e.weight.metric.slice(0,2)), 
+      max_weight: Number(e.weight.metric.slice(4)), 
+      min_height: Number(e.height.metric.slice(0,2)),
+      max_height: Number(e.height.metric.slice(4)),
       life_span: e.life_span,
       temperament: convTo(e.temperament),
       image: e.image.url
       }
   })
+  
   return allDogs;
 }
 

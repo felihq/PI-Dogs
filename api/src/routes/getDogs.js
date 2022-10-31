@@ -24,6 +24,7 @@ router.get('/dogs', async (req, res) => {
         res.status(200).json(allDogs);
       } catch (error) {
         res.status(404).send('Missing data')
+        console.log(error)
       }
     }
 })
