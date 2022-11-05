@@ -21,24 +21,20 @@
 }
 
 .dogsImage{
-    border-radius: 10px 10px 10px 10px ;
+border-radius: 10px 10px 10px 10px ;
 margin-top: -3px;
 width: 80%;
 max-width: 100%;
-height: auto;
-position: relative;
-object-fit: fill; 
-align-items: center;
-justify-content: center;
 }
 
 img{
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-    border-radius: 10px 10px 10px 10px;
+    width: 180px;
+    height: 300px;
+    max-height: 150px;
+    object-fit: cover;
     margin-left: 20px;
-    
+    margin-right: auto;
+    border-radius: 10px;
 }
 
 .cardTemperaments{
@@ -59,4 +55,10 @@ word-wrap: break-word;
 
 .infoButton{
     text-align: center;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    width: 100%;
 }
