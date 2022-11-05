@@ -6,6 +6,8 @@ export const GET_BY_BREED = "GET_BY_BREED";
 export const ORDER_BY_ALPHABET = "ORDER_BY_ALPHABET"
 export const ORDER_BY = "ORDER_BY"
 export const FILTER_BY_TEMPERAMENTS = "FILTER_BY_TEMPERAMENTS"
+export const GET_TEMPERAMENTS = "GET_TEMPERAMENTS"
+export const FILTER_BY_BREED = "FILTER_BY_BREED"
 
 export function getDogs () {
 return async function (dispatch) {
@@ -20,6 +22,16 @@ return async function (dispatch) {
     }
 }
 }
+
+export function getTemperaments (){
+    return async function (dispatch){
+        var json = await axios("http://localhost:3001/temperaments", {});
+        return dispatch ({
+            type: GET_TEMPERAMENTS, 
+            payload: json.data
+        })
+    }
+};
 
 export function getDogsDetails (id) {
     return async function (dispatch) {
@@ -58,6 +70,13 @@ export function orderBy (payload) {
 export function filterByTemperaments (payload) {
     return {
         type: FILTER_BY_TEMPERAMENTS,
+        payload //payload es un array de temperamentos
+    }
+}
+
+export function filterByBreed (payload) {
+    return {
+        type: FILTER_BY_BREED,
         payload
     }
 }
