@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { getDogs, orderBy, filterByTemperaments, getTemperaments, filterByBreed } from "../redux/actions";
 import Card from './Card'
 import './Home.css'
@@ -72,6 +73,11 @@ function handleFilterByBreed (e){
             <SearchBar/>
             </div>
             <div>
+             <Link to="/home/form">
+               <button type="button">Create Dog!</button>
+             </Link>
+           </div>
+            <div>
                 <select className="filterBy" onChange={e => handleSort(e)}>
                 <option value ="default"> Sort by.. </option>
                 <option value = "az"> A-Z</option>
@@ -116,14 +122,13 @@ function handleFilterByBreed (e){
                         id={ e.id }
                         name = { e.name }
                         image = { e.image }
-                        temperament = { e.temperament?.join(', ') }
+                        temperament = { typeof e.temperament === 'string' ? e.temperament : e.temperament?.join(', ')}
                         min_weight = {e.min_weight}
                         max_weight = {e.max_weight}
                             />                     
                     </div>
 )})}
         </div>
-
  </div>
 
     )

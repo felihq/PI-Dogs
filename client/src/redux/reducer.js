@@ -1,4 +1,4 @@
-import { GET_DOGS, GET_BY_BREED, GET_DOGS_DETAILS, ORDER_BY, FILTER_BY_TEMPERAMENTS, GET_TEMPERAMENTS, FILTER_BY_BREED } from "./actions";
+import { GET_DOGS, GET_BY_BREED, GET_DOGS_DETAILS, ORDER_BY, FILTER_BY_TEMPERAMENTS, GET_TEMPERAMENTS, FILTER_BY_BREED, CREATE_DOG } from "./actions";
 
 const initialState = {
     dogs : [],
@@ -120,6 +120,10 @@ case FILTER_BY_BREED:
                dogs: breedsFilter,
                
 }
+case CREATE_DOG:
+    return {
+        ...state,
+    }
         default: 
         return state;
     }
