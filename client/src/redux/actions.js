@@ -36,19 +36,19 @@ export function getTemperaments (){
     }
 };
 
-export function getDogsDetails (id) {
+export function getDogsDetails(id) {
     return async function (dispatch) {
-        try {
-            var json = await axios.get(`http://localhost:3001/dogs/${id}`)
-            return dispatch({
-                type: GET_DOGS_DETAILS,
-                payload:json.data[0], 
-            })
-        } catch (error) {
-            alert(error)
-        }
-    }
-}
+      var res = await axios.get(`http://localhost:3001/dogs/${id}`)
+      console.log(res.data)
+        return dispatch({
+           type: GET_DOGS_DETAILS, 
+           payload: res.data[0] || res.data
+           })
+        .catch((err) => {
+          return err;
+        });
+    };
+  }
 
 
 export function getDogByBreed (payload) {

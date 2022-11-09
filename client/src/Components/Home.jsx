@@ -7,7 +7,7 @@ import Card from './Card'
 import './Home.css'
 import Pagination from "./Pagination";
 import SearchBar from "./SearchBar";
-import { dogImage } from '../photos/883509.png'
+import dogImage from '../photos/littledog.gif'
 
 
 export default function Home(){
@@ -16,7 +16,7 @@ const dispatch = useDispatch();
 const allDogs = useSelector ((state) => state.dogs);
 const temperaments = useSelector ((state) => state.temperaments)
 const [, setOrder] = useState('All') 
-const [, setBreeds] = useState('All')
+const [, setBreeds] = useState('All') 
 
 const [currentPage, setCurrentPage] = useState(1)
 const [dogsPerPage] = useState(8)
@@ -61,7 +61,7 @@ function handleFilterByBreed (e){
     e.preventDefault();
     dispatch(filterByBreed(e.target.value))
     setCurrentPage(1)
-    setBreeds(e.target.value)
+    setBreeds(e.target.value) 
 }
 
     return(
@@ -112,9 +112,9 @@ function handleFilterByBreed (e){
 
             <div  className="Pagination">
             <Pagination
-                dogsPerPage = {dogsPerPage}
+                dogsPerPage = {dogsPerPage} 
                 allDogs = {allDogs.length} 
-                pagination = {pagination}
+                pagination = {pagination} 
             />
             </div>
 
@@ -132,10 +132,9 @@ function handleFilterByBreed (e){
                             />                     
                     </div>
 )})}
+  <img src={dogImage} className='dogImagepng' />
         </div>
-        {/* <div>
-            <img src={dogImage} className='dogImagepng' />
-            </div> */}
+          
  </div>
 
     )

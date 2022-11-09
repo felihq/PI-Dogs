@@ -31,5 +31,10 @@ li {
 
 .buttonCss:hover{
     color: rgb(238, 165, 165);
+    box-shadow: 0 0 5px, #d8afc5,
+                0 0 25px, #d8afc5,
+                0 0 50px,  #d8afc5,
+                0 0 100px, #d8afc5
+                
 }
 

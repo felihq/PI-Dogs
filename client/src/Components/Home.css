@@ -4,9 +4,10 @@
     flex-wrap: wrap;
 }
 
-/* .dogImagepng{
-  
-} */
+.dogImagepng{
+    margin-left: 985px;
+    transform: translateY(-300px);
+}
 
 .homeDiv{
     background-color: rgb(158, 176, 192);

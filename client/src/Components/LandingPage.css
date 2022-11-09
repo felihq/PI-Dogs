@@ -14,10 +14,10 @@
 }
 
 .btnLan{
-    border-radius: 15px;
+    border-radius: 8px;
     cursor: pointer;
     color: rgb(0, 0, 0);
-    border: 2px solid rgb(29, 29, 29);
+    border: 2px solid rgb(46, 46, 46);
     font-size: 20px;
     background-color: blanchedalmond;
     font-family: "Comic Sans MS", "Comic Sans";

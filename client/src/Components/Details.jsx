@@ -6,22 +6,22 @@ import { getDogsDetails } from "../redux/actions";
 var img = 'https://cdnb.artstation.com/p/assets/images/images/040/159/961/original/camila-xiao-pixel-art-doge-cute-dog-aniamted-loop-gif-barking-running-scared-and-happy-loop-gif-8bit-16bit.gif?1628036255'
 
 export default function Details(){
-const { id } = useParams();
+    const dispatch = useDispatch();
+    let dogsDetail = useSelector((state) => state.dogsDetails); 
+    const { id } = useParams(); 
 
-const dispatch = useDispatch();
-const dogsDetail = useSelector((state) => state.dogsDetails);
+    const history = useHistory();
 
-
-useEffect(() => {
-    dispatch(getDogsDetails(id));
-}, [dispatch, id]);
+    useEffect(() => {
+    dispatch(getDogsDetails(id)); 
+    }, [dispatch, id]); 
 
 
 return (
 
     <div>
    <div>
-        <h2> {dogsDetail.name} </h2>
+        <h2> {dogsDetail.name} </h2> 
             <div >
                 <img  src={dogsDetail.image ? dogsDetail.image : img } />
             </div>
@@ -32,13 +32,13 @@ return (
             <p > Min Height: {dogsDetail.min_height} - Max Height: {dogsDetail.max_height} </p>
             <p > Life Span: {dogsDetail.life_span} </p>
 
-           <Link to ="/home" >
-                <button> Back </button>
-            </Link>
 
            
         </div>
-         
+        <Link to ="/home" >
+                <button> Back </button>
+            </Link>
+
     </div>
     
 )
