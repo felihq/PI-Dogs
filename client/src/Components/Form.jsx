@@ -92,10 +92,10 @@ export default function Form(){
 
     function handleTemperaments(e){
         e.preventDefault()
-        setInput((input) => ({
+        setInput({
             ...input,
             temperaments: [...input.temperaments, e.target.value]
-        }))
+        })
         setErrors(validate({
             ...input, 
             temperaments: [...input.temperaments, e.target.value]

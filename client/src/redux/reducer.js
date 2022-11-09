@@ -1,4 +1,4 @@
-import { GET_DOGS, GET_BY_BREED, GET_DOGS_DETAILS, ORDER_BY, FILTER_BY_TEMPERAMENTS, GET_TEMPERAMENTS, FILTER_BY_BREED, CREATE_DOG } from "./actions";
+import { GET_DOGS, GET_BY_BREED, GET_DOGS_DETAILS, ORDER_BY, FILTER_BY_TEMPERAMENTS, GET_TEMPERAMENTS, FILTER_BY_BREED, CREATE_DOG, CLEAN } from "./actions";
 
 const initialState = {
     dogs : [],
@@ -16,6 +16,7 @@ case GET_DOGS:
         dogs: action.payload,
         filtered: action.payload
       }
+      
 case GET_BY_BREED:
         return{
           ...state,
@@ -26,12 +27,14 @@ case GET_BY_BREED:
               ...state,
               temperaments : action.payload
           }
+
 case GET_DOGS_DETAILS:
          return{
            ...state,
           dogsDetails: action.payload
          }
-         case ORDER_BY:
+
+case ORDER_BY:
           if (action.payload === "default"){
             return {
                 ...state,
@@ -64,7 +67,6 @@ case GET_DOGS_DETAILS:
               }
               return 0;
           }) 
-
       }
   }
   if(action.payload === "asc" ){
@@ -123,6 +125,11 @@ case FILTER_BY_BREED:
 case CREATE_DOG:
     return {
         ...state,
+    }
+case CLEAN:
+    return {
+        ...state,
+        dogsDetails: [],
     }
         default: 
         return state;

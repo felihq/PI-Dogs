@@ -10,10 +10,7 @@ router.get('/dogs', async (req, res) => {
       let {name} = req.query
       const dogsName2 = await allInfo();
       const dog = dogsName2.filter((e) =>  e.name.toLowerCase().includes(name.toLowerCase()))
-      if(dog.length >= 1){ res.status(200).send(dog) 
-      } else {
-        throw new Error(error)
-      }
+      if(dog.length >= 1) res.status(200).send(dog) 
       } catch(error) {
         res.status(404).send('Dog not found')
         console.log(error)

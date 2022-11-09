@@ -12,11 +12,11 @@ router.get('/temperaments', async (req, res) => {
   
     const apiInfo = await axios.get(api)
     let everyTemperament =  apiInfo.data?.map(dog => dog.temperament ? dog.temperament : null).map(dog => dog && dog.split(', '));
-   const mySet = new Set(everyTemperament.flat());
-   let temperamentsToDB =  mySet.forEach((e) => {
-    if(e){
+   const mySet = new Set(everyTemperament);
+   let temperamentsToDB =  mySet.forEach((t) => {
+    if(t){
       Temperament.findOrCreate({
-        where: { name: e}
+        where: { name: t}
     });
     }
    })
@@ -24,7 +24,6 @@ router.get('/temperaments', async (req, res) => {
    res.status(200).send(temperamentsToDB) 
   } catch (error) {
     res.status(404).send("No temperaments found")
-    console.log(error.message)
   }
 })
 

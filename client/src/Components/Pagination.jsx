@@ -10,7 +10,7 @@ export default function Pagination({dogsPerPage, allDogs, pagination}){
     }
  
     return(
-        <nav className="navCss">
+        <nav className="pagCss">
             <ul> 
                 {pageNumbers?.map(number => ( 
                     <li key={number}> 

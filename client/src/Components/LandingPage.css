@@ -1,0 +1,42 @@
+
+.landing{
+    background-image: url('../photos/d69775a2f30926e.gif');
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    flex-direction: column;
+    top: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.btnLan{
+    border-radius: 15px;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    border: 2px solid rgb(29, 29, 29);
+    font-size: 20px;
+    background-color: blanchedalmond;
+    font-family: "Comic Sans MS", "Comic Sans";
+    margin-left: 62%;
+    margin-top: 2%;
+}
+
+.btnLan:hover{
+    background-color: rgb(241, 233, 238);
+    color: rgb(0, 0, 0);
+}
+
+.landing h1{
+    min-width: 200px;
+    color: rgb(0, 0, 0);
+    font-size: 65px;
+    margin-right: 1%;
+    font-family: "Comic Sans MS", "Comic Sans";
+    margin-left: 63%;
+    margin-top: 14%;
+    text-decoration: underline;
+}

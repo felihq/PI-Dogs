@@ -9,6 +9,7 @@ export const FILTER_BY_TEMPERAMENTS = "FILTER_BY_TEMPERAMENTS"
 export const GET_TEMPERAMENTS = "GET_TEMPERAMENTS"
 export const FILTER_BY_BREED = "FILTER_BY_BREED"
 export const CREATE_DOG = "CREATE_DOG"
+export const CLEAN = "CLEAN"
 
 
 export function getDogs () {
@@ -41,13 +42,15 @@ export function getDogsDetails (id) {
             var json = await axios.get(`http://localhost:3001/dogs/${id}`)
             return dispatch({
                 type: GET_DOGS_DETAILS,
-                payload:json.data
+                payload:json.data[0], 
             })
         } catch (error) {
             alert(error)
         }
     }
 }
+
+
 export function getDogByBreed (payload) {
     return async function (dispatch) {
         try {
@@ -95,4 +98,10 @@ export function createDog (payload) {
               alert("Post failed")
             }
         } 
+}
+
+export function clean () {
+    return {
+        type: "CLEAN"
+    }
 }

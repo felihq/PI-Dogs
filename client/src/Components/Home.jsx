@@ -7,13 +7,15 @@ import Card from './Card'
 import './Home.css'
 import Pagination from "./Pagination";
 import SearchBar from "./SearchBar";
+import { dogImage } from '../photos/883509.png'
+
 
 export default function Home(){
 
 const dispatch = useDispatch();
 const allDogs = useSelector ((state) => state.dogs);
 const temperaments = useSelector ((state) => state.temperaments)
-const [, setOrder] = useState('All')
+const [, setOrder] = useState('All') 
 const [, setBreeds] = useState('All')
 
 const [currentPage, setCurrentPage] = useState(1)
@@ -27,6 +29,7 @@ const pagination = (currentPageNumber) => {
     setCurrentPage(currentPageNumber)
 }
 
+
 useEffect(() => {
     dispatch(getDogs())
     dispatch(filterByTemperaments()) 
@@ -36,7 +39,7 @@ useEffect(() => {
 
 
 function handleClick(e){
-    e.preventDefault();
+    e.preventDefault(); //espera a que se despache la accion para que no se recargue la pagina
     dispatch(getDogs())
     }
 
@@ -53,8 +56,7 @@ function handleFilterByTemp (e){
     setCurrentPage(1)
     setTemperament(e.target.value) 
     }
-
-    
+   
 function handleFilterByBreed (e){
     e.preventDefault();
     dispatch(filterByBreed(e.target.value))
@@ -63,12 +65,14 @@ function handleFilterByBreed (e){
 }
 
     return(
-
-        <div>
-            <h1> Henry Dogs </h1>
-            <button onClick={e =>{handleClick()}}>
-            Refresh
-            </button>
+        
+        <div className="homeDiv">
+            <div className="welcome">
+            <h1> 🐕 Welcome 🐕 </h1>
+            </div>
+            <div>
+            <button className='recBtn' onClick={e => {handleClick(e)}}>Refresh</button>
+            </div>
             <div>
             <SearchBar/>
             </div>
@@ -129,6 +133,9 @@ function handleFilterByBreed (e){
                     </div>
 )})}
         </div>
+        {/* <div>
+            <img src={dogImage} className='dogImagepng' />
+            </div> */}
  </div>
 
     )

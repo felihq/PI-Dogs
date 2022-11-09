@@ -61,4 +61,33 @@ word-wrap: break-word;
 a {
     text-decoration: none;
     width: 100%;
+    color: #000000;
+    font-family: "Comic Sans MS", "Comic Sans";
 }
+
+a:hover {
+    color:  #53273d;
+}
+
+
+
+
+
+/* a::after {
+    content: "";
+    height: 2px;
+    width: 0%;
+    background-color: rgb(172, 174, 177);
+    display: block;
+    transition: 0.1s ease-in-out;
+
+}
+
+a:hover::after {
+    content: "";
+    height: 2px;
+    width: 100%;
+    background-color: rgb(121, 121, 121);
+    display: block;
+} */
+
