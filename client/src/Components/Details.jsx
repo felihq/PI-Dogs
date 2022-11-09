@@ -10,7 +10,6 @@ export default function Details(){
     let dogsDetail = useSelector((state) => state.dogsDetails); 
     const { id } = useParams(); 
 
-    const history = useHistory();
 
     useEffect(() => {
     dispatch(getDogsDetails(id)); 
