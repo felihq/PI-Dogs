@@ -11,7 +11,6 @@ function validate (input) {
         errors.name = "Name is required"}
     else if (!input.name.match(/^[A-Za-z\s]+$/)){
         errors.name = "Only letters, please"
-    
 }
     
     if(!input.life_span){
@@ -74,9 +73,8 @@ export default function Form(){
         min_height: '',
         max_height: '',
         image: '',
-        temperaments: []
+        temperament: []
     })
-
 
 
     function handleChange(e) {
@@ -94,18 +92,18 @@ export default function Form(){
         e.preventDefault()
         setInput({
             ...input,
-            temperaments: [...input.temperaments, e.target.value]
+            temperament: [...input.temperament, e.target.value]
         })
         setErrors(validate({
             ...input, 
-            temperaments: [...input.temperaments, e.target.value]
+            temperament: [...input.temperament, e.target.value]
         }))
     }
 
     function handleSubmit(e) {
-        if (input.name && input.temperaments) {
+        if (input.name && input.temperament) {
         e.preventDefault();
-        dispatch(createDog(input))
+        dispatch(createDog(input)) 
         alert("Dog created succesfully")
         setInput({
             name: "",
@@ -129,7 +127,7 @@ export default function Form(){
         e.preventDefault()
         setInput((input) => ({
             ...input,
-            temperaments: input.temperaments.filter((t) => t !== e.target.value)
+            temperament: input.temperament.filter((t) => t !== e.target.value)
         }))
     }
 
@@ -175,12 +173,8 @@ export default function Form(){
 
 
                 <div>
-            {/* <label> Temperaments   </label> 
-            <select value= {input.temperaments} onChange = {(e)=> handleTemperaments(e)}>
-            {temperaments.map((el) => (<option key={el.id}> {el.name} </option>))}
-            </select> */}
             <label> Temperaments: </label>
-            <select value={input.temperaments} onChange={(e) => handleTemperaments(e)}>
+            <select value={input.temperament} onChange={(e) => handleTemperaments(e)}>
                 {temperaments.map((el) => (
                     <option key={el.id} value={el.name}>
                         {el.name}
@@ -192,12 +186,9 @@ export default function Form(){
               <button className='goBackButton'><p> Back </p></button>
                 </Link>
                 </form>
-                {/* <button className='submitButton' onClick={(e) => handleSubmit(e)}><p> Submit </p></button> */}
                 <button className='submitButton' type="submit" onClick={(e) => handleSubmit(e)}><p> Submit </p></button>
-                {/* <button className='createButtonCss' disabled={Object.keys(errors).length > 0 || input.temperaments.length === 0 ? true : false} type ='submit'> <p> Create dog </p> </button>   */}
-                {/* <button className="createDogButton" type="submit"> Create Dog! </button> */}
                 <div className="temperaments"> 
-                {input.temperaments.map((t) => ( 
+                {input.temperament.map((t) => ( 
                     <div className="temperament">
                         <p>{t}</p>
                         <button className="deleteButton" value={t} onClick={(e) => handleDelete(e)}> x </button>

@@ -4,9 +4,7 @@
 
 .dogsCard{
     border-radius: 15px 15px 15px 15px;
-    background: rgba(98, 97, 97, 0.25);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    background: rgba(73, 44, 44, 0.25);
     border-bottom: 4px solid rgb(98, 97, 97);
     height: 403px;
     width: 220px;
@@ -18,6 +16,11 @@
     text-align: center;
     flex-direction: column;
     transition: all 0.4s ease
+}
+
+
+.cardName{
+  font-size: 20px;
 }
 
 .dogsImage{
@@ -38,25 +41,23 @@ img{
 }
 
 .cardTemperaments{
-    color: #53273d;
-background-color: rgb(161, 158, 158);
-font-size: 13px;
+    color: #181617;
+background-color: rgb(223, 208, 207);
+font-size: 14px;
 text-align: center;
 word-wrap: break-word;
+font-family: "Comic Sans MS", "Comic Sans";
 }
 
 .cardWeight{
-    color: #333036;
-    background-color: rgb(161, 158, 158);
+    color: #000000;
+    background-color: rgb(209, 194, 193);
     font-size: 13px;
     text-align: center;
     word-wrap: break-word;
+    font-family: "Comic Sans MS", "Comic Sans";
 }
 
-.infoButton{
-    text-align: center;
-    cursor: pointer;
-}
 
 a {
     text-decoration: none;

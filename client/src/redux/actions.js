@@ -38,15 +38,15 @@ export function getTemperaments (){
 
 export function getDogsDetails(id) {
     return async function (dispatch) {
-      var res = await axios.get(`http://localhost:3001/dogs/${id}`)
-      console.log(res.data)
+     try{ 
+        var json = await axios.get(`http://localhost:3001/dogs/${id}`)
         return dispatch({
            type: GET_DOGS_DETAILS, 
-           payload: res.data[0] || res.data
+           payload: json.data[0] || json.data
            })
-        .catch((err) => {
-          return err;
-        });
+        } catch (error) {
+            alert(error)
+        }
     };
   }
 

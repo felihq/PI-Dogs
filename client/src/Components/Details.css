@@ -1,0 +1,28 @@
+.background{
+    background-image: url('../photos/background2.jpg');
+    display: inline-block;
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+}
+
+/* .detailsCss{
+
+} */
+/* 
+img{
+    width: 350px;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+} */
+
+.weightCss{
+    color: #000000;
+    background-color: rgb(209, 194, 193);
+    font-size: 13px;
+    font-family: "Comic Sans MS", "Comic Sans";
+}

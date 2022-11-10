@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import {useDispatch} from 'react-redux';
 import { getDogByBreed } from '../redux/actions';
+import './SearchBar.css'
+
 
 export default function SearchBar(){
 

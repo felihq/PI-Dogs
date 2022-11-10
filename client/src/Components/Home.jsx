@@ -7,7 +7,7 @@ import Card from './Card'
 import './Home.css'
 import Pagination from "./Pagination";
 import SearchBar from "./SearchBar";
-import dogImage from '../photos/littledog.gif'
+import loading from '../photos/loading.gif'
 
 
 export default function Home(){
@@ -29,6 +29,9 @@ const pagination = (currentPageNumber) => {
     setCurrentPage(currentPageNumber)
 }
 
+useEffect(() => {
+    setCurrentPage(1)
+}, [allDogs])
 
 useEffect(() => {
     dispatch(getDogs())
@@ -71,14 +74,14 @@ function handleFilterByBreed (e){
             <h1> 🐕 Welcome 🐕 </h1>
             </div>
             <div>
-            <button className='recBtn' onClick={e => {handleClick(e)}}>Refresh</button>
+            <button className='refBtn' onClick={e => {handleClick(e)}}>Refresh</button>
             </div>
-            <div>
+            <div className="searchBar">
             <SearchBar/>
             </div>
             <div>
              <Link to="/home/form">
-               <button type="button">Create Dog!</button>
+               <button className="createButton" type="button">Create Dog!</button>
              </Link>
            </div>
             <div>
@@ -118,6 +121,9 @@ function handleFilterByBreed (e){
             />
             </div>
 
+
+            {currentDogs.length === 0 ?
+            <div><img className='loadingGif' src={loading} alt="Loading..."/></div> :
             <div className="CardContainer">
                 {currentDogs?.map((e) => {
                     return (
@@ -132,9 +138,8 @@ function handleFilterByBreed (e){
                             />                     
                     </div>
 )})}
-  <img src={dogImage} className='dogImagepng' />
         </div>
-          
+          } 
  </div>
 
     )

@@ -18,25 +18,30 @@ case GET_DOGS:
       }
       
 case GET_BY_BREED:
-        return{
-          ...state,
-          dogs: action.payload
+    return{
+        ...state,
+        dogs: action.payload
+    }
+    case GET_TEMPERAMENTS:
+        return {
+            ...state,
+            temperaments : action.payload
         }
-        case GET_TEMPERAMENTS:
-          return {
-              ...state,
-              temperaments : action.payload
-          }
-
-case GET_DOGS_DETAILS:
-         return{
-           ...state,
-          dogsDetails: action.payload
-         }
-
-case ORDER_BY:
-          if (action.payload === "default"){
-            return {
+        
+        case GET_DOGS_DETAILS:
+            return{
+                ...state,
+                dogsDetails: action.payload
+            }
+            case CLEAN:
+                return {
+                    ...state,
+                    dogsDetails: [],
+                }
+            
+            case ORDER_BY:
+                if (action.payload === "default"){
+                    return {
                 ...state,
                 dogs: state.dogs
             }
@@ -125,11 +130,6 @@ case FILTER_BY_BREED:
 case CREATE_DOG:
     return {
         ...state,
-    }
-case CLEAN:
-    return {
-        ...state,
-        dogsDetails: [],
     }
         default: 
         return state;
