@@ -1,13 +1,158 @@
-.formCss {
-    display: flex;
-    flex-direction: column;
+.formTitle {
+    background-image: url('../photos/background1.jpg');
     align-items: center;
+    display: flex;
     justify-content: center;
-    margin: 0 auto;
-    width: 50%;
-    height: 100%;
-    background-color: #f5f5f5;
-    border-radius: 10px;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-    padding: 20px;
+    background-size: cover; 
+    width: 100%;
+    height: 110vh;
+    background-size: 2000px;
+    cursor: url(../cursors/paw.svg), auto;
 }
+
+.form{
+    width: 55vh;
+    height: 50vh;
+    padding: 50px;
+    border-radius: 5px;
+    background-color:  #d8e2dc9a;
+    box-shadow: 0.5px -0.5px 19px -3px #c9aeb5;
+}
+
+.formCss{
+    font-family: "Comic Sans MS", "Comic Sans";
+    flex-direction: row;
+    flex-flow: wrap;
+    justify-content: center;
+   
+}
+
+.formTiitle{
+    text-decoration: underline;
+}
+
+.inputCss{
+    margin: 3%;
+    font-family: "Comic Sans MS", "Comic Sans";
+}
+
+.submitButton{
+    font-family: "Comic Sans MS", "Comic Sans";
+    background-color: #ffcad4;
+    cursor: pointer;
+    border: 1px solid;
+    transition: 0.2s;
+}
+
+.submitButton:hover{
+    background-color: rgb(255, 218, 218);
+    color: black;
+    text-shadow: 0 0 15px #ffec97,
+                 0 0 40px #ffec97,
+                 0 0 120px #ffec97;
+    transition-delay: 0.1s;   
+}
+
+.input{
+    font-size: 13px;
+    width: 150px;
+    height: 20px;
+    margin-left: 5px;
+    border: 2px solid #d8e2dc;
+    align-items: baseline;
+    display: table-cell;
+    font-family: "Comic Sans MS", "Comic Sans";
+}
+
+label{
+    position: absolute;
+    display: table-cell;
+    left: 480px;
+}
+
+.goBackButton{
+    font-family: "Comic Sans MS", "Comic Sans";
+    background-color: #ffcad4;
+    cursor: pointer;
+    border: 1px solid;
+    transition: 0.2s;
+    margin-right: 50px;
+}
+
+.goBackButton:hover{
+    background-color: rgb(255, 218, 218);
+    color: black;
+    text-shadow: 0 0 15px #ffec97,
+                 0 0 40px #ffec97,
+                 0 0 120px #ffec97;
+    transition-delay: 0.1s;   
+}
+
+.temperaments{
+  /* margin: 40px auto;
+  border: unset;
+  border-radius: 5px;
+  position: relative;
+  font-size: 12px;
+  box-shadow: 0.5px -0.5px 19px -3px rgb(174, 160, 140);
+  overflow: hidden;
+  width: 140%;
+  display: flex;
+  flex-flow: wrap;
+  gap: 2.5rem;
+  justify-content: center;
+  z-index: 0;
+  flex-direction: row; */
+  padding: 25px;
+  margin: 40px auto;
+  border-radius: 5px;
+  position: relative;
+  font-weight: bold;
+  font-size: 12px;
+  box-shadow: 0.5px -0.5px 19px -3px #c9aeb5;
+  overflow: hidden;
+  width: 90%;
+  display: flex;
+  background-color:  #d8e2dc9a;
+  flex-flow: wrap;
+  gap: 2.5rem;
+  justify-content: center;
+  color: rgb(0, 0, 0);
+}
+
+.deleteButton{
+    font-family: "Comic Sans MS", "Comic Sans";
+    background-color: #ff7e96;
+    cursor: pointer;
+    border: 1px solid;
+    transition: 0.2s;
+    margin-right: 50px;
+}
+
+.deleteButton:hover{
+    background-color: rgb(255, 218, 218);
+    color: black;
+    text-shadow: 0 0 15px #ffec97,
+                 0 0 40px #ffec97,
+                 0 0 120px #ffec97;
+    transition-delay: 0.1s;   
+}
+
+.temperament{
+    display: flex;
+    flex-direction: row;
+}
+
+.form p{
+    position: absolute;
+    color: red;
+    font-size: 12px;
+    display: table;
+    transform: translateY(-33px); 
+    right: 450px;
+}
+
+
+
+
+

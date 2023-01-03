@@ -1,4 +1,4 @@
-import { GET_DOGS, GET_BY_BREED, GET_DOGS_DETAILS, ORDER_BY, FILTER_BY_TEMPERAMENTS, GET_TEMPERAMENTS, FILTER_BY_BREED, CREATE_DOG, CLEAN } from "./actions";
+import { GET_DOGS, GET_BY_BREED, GET_DOGS_DETAILS, ORDER_BY, FILTER_BY_TEMPERAMENTS, GET_TEMPERAMENTS, FILTER_BY_BREED, CREATE_DOG, CLEAN, FILTER_BY_4 } from "./actions";
 
 const initialState = {
     dogs : [],
@@ -49,8 +49,8 @@ case GET_BY_BREED:
     if (action.payload === "az") {
         return {
             ...state,
-            dogs: state.dogs.sort(function (a, b) { //sorts the array of objects by name
-                if (a.name > b.name) { //if the name of the first object is greater than the second object
+            dogs: state.dogs.sort(function (a, b) { 
+                if (a.name > b.name) {
                     return 1; 
                 }
                 if (b.name > a.name) {
@@ -131,8 +131,16 @@ case CREATE_DOG:
     return {
         ...state,
     }
+    case FILTER_BY_4:
+ 
+    return{
+            ...state,
+            dogs: state.dogs.filter(e => e.min_weight === 4)
+        }
         default: 
         return state;
     }
 }
+
+
 

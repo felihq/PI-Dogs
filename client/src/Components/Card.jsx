@@ -7,24 +7,24 @@ var img = 'https://cdnb.artstation.com/p/assets/images/images/040/159/961/origin
  return(
     <div className="dogsContainer">
     <div className="dogsCard">
+    <div className='gradient'></div>
     <div className="dogsImage">
     {image ? (
-        <img className="recipe" src={`${image}`} alt = "There is no img"/>
-            ):
-                (
-                    <img className="recipe" src={img} alt = "There is no img"/>
-                )
-            }
+        <img className="dogImg" src={`${image}`} alt = "There is no img"/>
+        ):
+        (
+            <img className="loadingGif" src={img} alt = "There is no img"/>
+            )
+        }
     </div>
-    <Link to ={`/dogs/${id}`} > 
+   
+    <a href={`/dogs/${id}`} > 
     <h2 className="cardName"> {name} </h2>
-            </Link>
+            </a>
+    <div className='temperamentsss'>
     <p className="cardTemperaments"> {temperament} </p>
-
+    </div>
     <p className="cardWeight"> Min Weight: {min_weight} - Max weight: {max_weight}  </p>  
-
-
-
     </div>
     </div>
  )

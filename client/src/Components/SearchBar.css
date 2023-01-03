@@ -5,7 +5,19 @@
 }
 
 .breedButtonCss{
+    transform: translateY(72px);
+    transition: 0.2s;
+    cursor: pointer;
+    background-color: #ffcad4;
     font-family: "Comic Sans MS", "Comic Sans";
-    transform: translateY(72px)
+    border: 1px solid;
+}
+
+.breedButtonCss:hover{
+    background-color: rgb(255, 218, 218);
+    text-shadow: 0 0 15px #ffec97,
+                 0 0 40px #ffec97,
+                 0 0 120px #ffec97;
+    transition-delay: 0.1s;    
 }
 

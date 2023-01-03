@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { createDog, getTemperaments } from "../redux/actions";
 import { Link, useHistory } from "react-router-dom";
 import "./Form.css";
+import swal from 'sweetalert';
 
 function validate (input) {
     let errors = {};
@@ -104,7 +105,7 @@ export default function Form(){
         if (input.name && input.temperament) {
         e.preventDefault();
         dispatch(createDog(input)) 
-        alert("Dog created succesfully")
+        swal("Dog created successfully! 😊");
         setInput({
             name: "",
             life_span: "",
@@ -118,7 +119,7 @@ export default function Form(){
         history.push("/home")
     }
     else{
-        alert ("Please fill all the fields")
+        swal("Please fill all the fields!");
     }
      }
 
@@ -132,47 +133,58 @@ export default function Form(){
     }
 
     return (
+       <div className="formTitle">
         <div className="formCss">
-            <div className="formTitle">
+                <div className="formTiitle">
                 <h1>Create your own dog!</h1>
             </div>
+            <div className="form">
             <form onSubmit={(e) => handleSubmit(e)}>
-                <label> Name: </label>
-                <input type="text" name="name" value={input.name} onChange = {(e) => handleChange(e)} />
+                <div className="inputCss">
+                <label className="dogNameLabel"> Name: </label>
+                <input className="input"  autoComplete="off" type="text" name="name" value={input.name} onChange = {(e) => handleChange(e)} />
                 {errors.name && <p>{errors.name}</p>}
+                </div>
 
-
+                <div className="inputCss">
                 <label> Life span: </label>
-                <input type='number' min='1' max='25' name='life_span' value={input.life_span} onChange = {(e) => handleChange(e)} />
+                <input  className="input" type='number' min='1' max='25' name='life_span' value={input.life_span} onChange = {(e) => handleChange(e)} />
                 {errors.life_span && <p>{errors.life_span}</p>}
+                </div>
 
-
+                <div className="inputCss"> 
                 <label> Min weight: </label>
-                <input type='number' name='min_weight' min='1' value={input.min_weight} onChange = {(e) => handleChange(e)} />
+                <input className="input" type='number' name='min_weight' min='1' value={input.min_weight} onChange = {(e) => handleChange(e)} />
                 {errors.min_weight && <p>{errors.min_weight}</p>}
+                </div>
 
-
+                
+                <div className="inputCss">
                 <label> Max weight: </label>
-                <input type='number' name='max_weight' max='100' value={input.max_weight} onChange = {(e) => handleChange(e)} />
+                <input className="input"  type='number' name='max_weight' max='100' value={input.max_weight} onChange = {(e) => handleChange(e)} />
                 {errors.max_weight && <p>{errors.max_weight}</p>}
+                </div>
 
-
+                
+                <div className="inputCss"> 
                 <label> Min height: </label>
-                <input type='number' name='min_height' min='10' value={input.min_height} onChange = {(e) => handleChange(e)} 
+                <input className="input"  type='number' name='min_height' min='10' value={input.min_height} onChange = {(e) => handleChange(e)} 
                  />
                 {errors.min_height && <p>{errors.min_height}</p>}
-                
+                </div>
 
+                <div className="inputCss"> 
                 <label> Max height: </label>
-                <input type='number' name='max_height' max='80' value={input.max_height} onChange = {(e) => handleChange(e)} />
+                <input className="input"  type='number' name='max_height' max='80' value={input.max_height} onChange = {(e) => handleChange(e)} />
                 {errors.max_height && <p>{errors.max_height}</p>}
+                </div>
 
-
+                <div className="inputCss">
                 <label> Image: </label>
-                <input type='url' name='image' value={input.image} onChange = {(e) => handleChange(e)} />
+                <input  className="input" autoComplete="off" type='url' name='image' value={input.image} onChange = {(e) => handleChange(e)} />
+                </div>
 
-
-                <div>
+                <div className="inputCss">
             <label> Temperaments: </label>
             <select value={input.temperament} onChange={(e) => handleTemperaments(e)}>
                 {temperaments.map((el) => (
@@ -182,18 +194,23 @@ export default function Form(){
                 ))}
             </select>
               </div>
-                <Link to="/home">
-              <button className='goBackButton'><p> Back </p></button>
-                </Link>
                 </form>
-                <button className='submitButton' type="submit" onClick={(e) => handleSubmit(e)}><p> Submit </p></button>
+                </div>
+
                 <div className="temperaments"> 
                 {input.temperament.map((t) => ( 
                     <div className="temperament">
-                        <p>{t}</p>
                         <button className="deleteButton" value={t} onClick={(e) => handleDelete(e)}> x </button>
+                        {t}
                         </div>
                 ))}
+                </div>
+                <div className="buttonsForm">
+                <Link to ="/home" >
+                     <button className='goBackButton'> Back </button>
+                 </Link>
+                <button className='submitButton' type="submit" onClick={(e) => handleSubmit(e)}> Submit </button>
+                </div>
                 </div>
             </div>
     )

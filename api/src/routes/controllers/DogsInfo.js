@@ -5,30 +5,6 @@ const API = 'https://api.thedogapi.com/v1/breeds'
 
 const dogsDBinfo = async ()=>{
 
-
-      // return await Dogs.findAll ({
-      //     include: {
-      //         model: Temperament,
-      //         attributes: ['name'],
-      //         through: {
-      //             attributes: [],
-      //         }
-      //     }
-      // });
-   // let dogsDB1 = await Dogs.findAll({
-   //     include: Temperament        
-   //     });       
-
-
-   // dogsDB1 = JSON.stringify(dogsDB1); 
-   // dogsDB1 = JSON.parse(dogsDB1); 
-
-
-   // dogsDB1 = dogsDB1.reduce((acc, el) => acc.concat({
-   //     ...el, temperaments: el.temperaments.map(g => g.name)
-   // }), []) 
-   // return dogsDB1
-
    try{
      let allInDB = await Dogs.findAll({
        include: [Temperament],
@@ -57,11 +33,6 @@ const dogsDBinfo = async ()=>{
 
 const getApiInfo = async () => {
    const apiInfo = await axios.get(API)
-
-
-  //  const convTo = (data) => {
-  //     if (data) return data.split(', ')
-  //  }
 
 
    const allDogs = apiInfo.data.map((e) => {

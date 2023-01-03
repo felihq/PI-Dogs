@@ -16,10 +16,10 @@ export default function SearchBar(){
 
     function handleSubmit(e){
         e.preventDefault()
-        if(!name.length) { //si no hay nada en el input
-            return alert('Please insert a valid name.') //no hace nada
+        if(!name.length) { 
+            return alert('Please insert a valid name.') 
     } else {
-        dispatch(getDogByBreed(name)) //si hay algo en el input, hace el dispatch con el valor del input
+        dispatch(getDogByBreed(name)) 
         setName('') 
     }
     }
@@ -29,7 +29,7 @@ export default function SearchBar(){
     return(
         <div>
             <input className='breedInputCss' type='text'
-            placeholder="Dog's breed goes here"
+            placeholder="Breed..."
             value={name} 
             onKeyPress={e => e.key === 'Enter' ? handleSubmit(e) : null}
             onChange = {(e) => {handleInputChange(e)}}

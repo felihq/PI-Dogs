@@ -2,13 +2,13 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { getDogs, orderBy, filterByTemperaments, getTemperaments, filterByBreed } from "../redux/actions";
+import { getDogs, orderBy, filterByTemperaments, getTemperaments, filterByBreed, filterBy4 } from "../redux/actions";
 import Card from './Card'
 import './Home.css'
 import Pagination from "./Pagination";
 import SearchBar from "./SearchBar";
 import loading from '../photos/loading.gif'
-
+import hangin from "../photos/hangin.gif"
 
 export default function Home(){
 
@@ -29,22 +29,27 @@ const pagination = (currentPageNumber) => {
     setCurrentPage(currentPageNumber)
 }
 
+
 useEffect(() => {
     setCurrentPage(1)
 }, [allDogs])
 
 useEffect(() => {
+    if(!allDogs.length){
     dispatch(getDogs())
-    dispatch(filterByTemperaments()) 
-    dispatch(getTemperaments()) 
+    // dispatch(filterByTemperaments()) 
+    dispatch(getTemperaments())
+    }
 },[dispatch])
 
 
 
 function handleClick(e){
-    e.preventDefault(); //espera a que se despache la accion para que no se recargue la pagina
+    e.preventDefault(); 
     dispatch(getDogs())
     }
+
+
 
 function handleSort (e){
     e.preventDefault() 
@@ -67,23 +72,34 @@ function handleFilterByBreed (e){
     setBreeds(e.target.value) 
 }
 
+// function handleFilterBy4(){
+//     dispatch(filterBy4())
+//     setCurrentPage(1)
+// }
+
     return(
         
         <div className="homeDiv">
             <div className="welcome">
+            <img className="hangIn" src={hangin} alt="img" />
+            <img className="hangIn2" src={hangin} alt="img" />
             <h1> 🐕 Welcome 🐕 </h1>
             </div>
+            {/* <div>
+                <button onClick={(e) => handleFilterBy4(e)}>
+                   FILTER MIN WEIGHT BY 4
+                </button>
+                
+                </div>  */}
             <div>
             <button className='refBtn' onClick={e => {handleClick(e)}}>Refresh</button>
             </div>
             <div className="searchBar">
             <SearchBar/>
             </div>
-            <div>
-             <Link to="/home/form">
+             <a href="/home/form">
                <button className="createButton" type="button">Create Dog!</button>
-             </Link>
-           </div>
+             </a>
             <div>
                 <select className="filterBy" onChange={e => handleSort(e)}>
                 <option value ="default"> Sort by.. </option>
@@ -93,7 +109,7 @@ function handleFilterByBreed (e){
                 <option value = "desc"> Heaviest </option>
                 </select>
             </div>
-
+           
             <div>
             <select  className='filterTemps' value = {temperament} onChange = {(e)=> handleFilterByTemp(e)}>
         <option value="All"> All temperaments </option>
@@ -105,26 +121,35 @@ function handleFilterByBreed (e){
         </select>   
             </div>
 
-            <div >     
+            <div>     
         <select className='filterBreeds' onChange = {(e) => {handleFilterByBreed(e)}}> 
-            <option value = "all">Breeds</option>
+            <option value = "all">All breeds</option>
             <option value = "created">Created Breeds</option>
             <option value = "api"> Api Breeds</option>
         </select>
         </div>
+ 
+        <div className="Pagination">
+        <button className="paginationButton1"
+        onClick={() => pagination(currentPage === 1 ? currentPage : currentPage -1)}
+          > « </button>
 
-            <div  className="Pagination">
             <Pagination
                 dogsPerPage = {dogsPerPage} 
                 allDogs = {allDogs.length} 
                 pagination = {pagination} 
             />
-            </div>
+
+        <button className="paginationButton2"
+        onClick={() => pagination(currentPage === 0 ? currentPage : currentPage + 1 )} 
+          > » </button>
+        </div>
 
 
             {currentDogs.length === 0 ?
             <div><img className='loadingGif' src={loading} alt="Loading..."/></div> :
             <div className="CardContainer">
+            <div className="gradient"></div>
                 {currentDogs?.map((e) => {
                     return (
                     <div key={e.id} >
@@ -139,8 +164,7 @@ function handleFilterByBreed (e){
                     </div>
 )})}
         </div>
-          } 
+          }
  </div>
-
     )
 }

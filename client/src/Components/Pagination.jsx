@@ -8,12 +8,11 @@ export default function Pagination({dogsPerPage, currentPage, allDogs, paginatio
     for (let i = 1; i <= Math.ceil(allDogs/dogsPerPage); i++){ 
         pageNumbers.push(i)
     }
-    if(currentPage === pageNumbers.length + 1){ //
-        pagination(1)
-    }
+
  
     return(
         <nav className="pagCss">
+
             <ul> 
                 {pageNumbers?.map(number => ( 
                     <li key={number}> 
@@ -21,6 +20,7 @@ export default function Pagination({dogsPerPage, currentPage, allDogs, paginatio
                     </li>
                     ))}
             </ul>
+
             </nav>
     )
 }

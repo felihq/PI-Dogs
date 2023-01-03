@@ -18,8 +18,36 @@ li {
     list-style:none;
     margin: 0.75%;
     width: 5%;
-
 }
+
+.paginationButton1{
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    background: none;
+    font-family: "Comic Sans MS", "Comic Sans";
+}
+
+.paginationButton1:hover{     
+    color: #9d8189;       
+}
+
+.paginationButton2{
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    background: none;
+    font-family: "Comic Sans MS", "Comic Sans";
+}
+
+.paginationButton2:hover{
+    color: #9d8189;
+    box-shadow: 0 0 5px, #d8afc5,
+                0 0 25px, #d8afc5,
+                0 0 50px,  #d8afc5,
+                0 0 100px, #d8afc5          
+}
+
 
 .buttonCss{
     cursor: pointer;
@@ -29,12 +57,21 @@ li {
     font-family: "Comic Sans MS", "Comic Sans";
 }
 
+/* .buttonCss:focus{
+    color: red;
+} */
+
 .buttonCss:hover{
-    color: rgb(238, 165, 165);
+    color: #9d8189;
     box-shadow: 0 0 5px, #d8afc5,
                 0 0 25px, #d8afc5,
                 0 0 50px,  #d8afc5,
-                0 0 100px, #d8afc5
-                
+                0 0 100px, #d8afc5          
 }
+
+.buttonCss .point{
+  color: #9d8189;
+}
+
+
 

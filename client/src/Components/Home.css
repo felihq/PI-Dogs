@@ -1,17 +1,19 @@
+
 .CardContainer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
-
-.homeDiv{
-    background-image: url('../photos/background.jpg');
-    display: inline-block;
-
+.hangIn{
+    position: absolute;
+    transform: translateY(-100px) translateX(500px);
 }
 
-
+.hangIn2{
+    position: absolute;
+    transform: translateY(-100px) translateX(-660px);
+}
 
 .welcome{
     font-family: "Comic Sans MS", "Comic Sans";
@@ -20,53 +22,79 @@
 .filterBy{
     font-family: "Comic Sans MS", "Comic Sans";
     margin-right: 500px;
-    background-color: rgb(231, 188, 188);
+    background-color: #ffcad4;
     border: 1px solid;
+    transform: translateY(-3px);
+    transition: 0.2s;
+    cursor: pointer;
 }
 
 .filterBy:hover{
     background-color: rgb(255, 218, 218);
+    color: black;
+    text-shadow: 0 0 15px #ffec97,
+                 0 0 40px #ffec97,
+                 0 0 120px #ffec97;
+    transition-delay: 0.1s;        
                 
 }
 
 .filterTemps{
     font-family: "Comic Sans MS", "Comic Sans";
     margin-right: 500px;
-    background-color: rgb(231, 188, 188);
+    background-color: #ffcad4;
     border: 1px solid;
-    transform: translateY(2px);
+    transform: translateY(0px);
+    transition: 0.2s;
+    cursor: pointer;
 }
 
 .filterTemps:hover{
     background-color: rgb(255, 218, 218);
+    color: black;
+    text-shadow: 0 0 15px #ffec97,
+                 0 0 40px #ffec97,
+                 0 0 120px #ffec97;
+    transition-delay: 0.1s;        
                 
 }
 
 .filterBreeds{
     font-family: "Comic Sans MS", "Comic Sans";
     margin-left: 500px;
-    transform: translateY(-24px);
-    background-color: rgb(231, 188, 188);
+    transform: translateY(-23px);
+    background-color: #ffcad4;
     border: 1px solid;
-    
+    transition: 0.2s;
+    cursor: pointer;
 }
 
 .filterBreeds:hover{
     background-color: rgb(255, 218, 218);
-                
+    color: black;
+    text-shadow: 0 0 15px #ffec97,
+                 0 0 40px #ffec97,
+                 0 0 120px #ffec97;
+    transition-delay: 0.1s;          
 }
 
 .createButton{
     font-family: "Comic Sans MS", "Comic Sans";
     margin-left: 500px;
-    background-color: rgb(231, 188, 188);
+    background-color: #ffcad4;
     transform: translateY(20px);
     border: 1px solid;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
 .createButton:hover{
     background-color: rgb(255, 218, 218);
-                
+    color: black;
+    text-shadow: 0 0 15px #ffec97,
+                 0 0 40px #ffec97,
+                 0 0 120px #ffec97;
+    transition-delay: 0.1s;                
 }
 
 /* .searchBar{
@@ -75,13 +103,28 @@
 
 .refBtn{
     font-family: "Comic Sans MS", "Comic Sans";
-    background-color: rgb(231, 188, 188);
+    background-color: #ffcad4;
     cursor: pointer;
     border: 1px solid;
+    transition: 0.2s;
 }
 
 .refBtn:hover{
     background-color: rgb(255, 218, 218);
-                
+    color: black;
+    text-shadow: 0 0 15px #ffec97,
+                 0 0 40px #ffec97,
+                 0 0 120px #ffec97;
+    transition-delay: 0.1s;         
+}
+
+.homeDiv{
+    display: inline-block;
+    background-image: url('../photos/background1.jpg');
+    width: 100%;
+    height: 200vh;
+    background-position: center;
+    background-size: 2000px;   
+    cursor: url(../cursors/paw.svg), auto;
 }
 
